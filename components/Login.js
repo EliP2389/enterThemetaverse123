@@ -12,7 +12,7 @@ function Login() {
 
         <div className="w-full h-screen">
             <Image 
-            src='https://links.papareact.com/55n'
+            src='https://web-app-wpp-uks-prod-wppcom-cd-1.azurewebsites.net/-/media/project/wpp/images/wpp-iq/2021/gaming-and-the-metaverse.jpg' 
             layout='fill'
             objectFit='cover'
             />

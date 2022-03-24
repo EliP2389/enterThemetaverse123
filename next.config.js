@@ -5,6 +5,6 @@ module.exports = {
 
 module.exports = {
   images: {
-    domains: ["avatars.dicebear.com", "links.papareact.com"],
+    domains: ["avatars.dicebear.com", "web-app-wpp-uks-prod-wppcom-cd-1.azurewebsites.net"],
   },
 };
