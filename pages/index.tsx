@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Login from '../components/Login'
+import { useMoralis } from 'react-moralis'
 import Image from 'next/image'
 
 const Home: NextPage = () => {
-  const isAuthenticated = false;
+  // handles authentication
+const { isAuthenticated } = useMoralis();
 
 if (!isAuthenticated) return <Login />
 
