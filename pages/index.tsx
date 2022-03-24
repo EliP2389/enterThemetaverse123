@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Home: NextPage = () => {
   // handles authentication
-const { isAuthenticated } = useMoralis();
+const { isAuthenticated, logout } = useMoralis();
 
 if (!isAuthenticated) return <Login />
 
@@ -18,6 +18,7 @@ if (!isAuthenticated) return <Login />
       </Head>
 
       <h1>Welcome to the Metaverse</h1>
+      <button onClick={logout}>Logout</button>
     </div>
   )
 }
