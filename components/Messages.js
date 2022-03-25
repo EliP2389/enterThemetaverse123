@@ -1,7 +1,10 @@
-import { ByMoralis } from "react-moralis"
+import { ByMoralis, useMoralis } from "react-moralis"
+import SendMessage from "../components/SendMessage"
 
 
 function Messages() {
+const { user } = useMoralis();
+
   return (
     <div className="pb-56">
         <div className="my-5">
@@ -10,7 +13,18 @@ function Messages() {
             style={{marginLeft: 'auto', marginRight: 'auto'}}
             />
         </div>
-        <h1>I am the messages</h1>
+
+        <div>
+            {/* {Each messgage} */}
+        </div>
+
+        <div>
+            <SendMessage />
+        </div>
+
+        <div className="text-center text-gray-200 mt-5"> 
+            <p>You're up to date {user.getUsername()}!🔥</p>
+        </div>
     </div>
   )
 }
