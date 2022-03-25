@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <div className="text-rose-500">
-      <div className="">
+      <div className="grid grid-cols-5 lg:grid-cols-6 items-end lg:items-center">
         <div className="relative mx-auto hidden h-24 w-24 lg:inline-grid">
           <Image
             layout="fill"
@@ -18,7 +18,7 @@ function Header() {
           />
         </div>
 
-        <div>
+        <div className='col-span-4 text-left lg:text-center'>
           <div className="relative h-48 w-48 rounded-full border-8 border-rose-500 lg:mx-auto">
             <Avatar logoutOnPress />
           </div>
@@ -27,7 +27,6 @@ function Header() {
 
           <h2 className="text-5xl font-bold truncate">{user.getUsername()}</h2>
 
-          {/* {change username component} */}
           <ChangeUsername />
         </div>
       </div>

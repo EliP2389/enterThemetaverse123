@@ -15,7 +15,6 @@ function ChangeUsername() {
           setUserData({
               username,
           });
-          console.log(username);
   };
 
   
