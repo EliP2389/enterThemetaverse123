@@ -16,8 +16,12 @@ if (!isAuthenticated) return <Login />
         <title>Metaverse Challenge</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1>Welcome to the Metaverse</h1>
+    <div>
+      <div className="max-w-screen-2xl mx-auto">
+      {/* {Header} */}
+      {/* {Messages} */}
+      </div>
+      </div>
       <button onClick={logout}>Logout</button>
     </div>
   )
