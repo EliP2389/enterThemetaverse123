@@ -15,6 +15,15 @@ function Header() {
           src="https://wolf-wallpapers.pro/images/2048x1152-wolf-colorful-minimalism-2048x1152-resolution-hd-1-8-wolf-wallpapers.pro.jpg"
            />
         </div>
+          
+          <div>
+       <div>{/* {Avatar} */}</div> 
+
+        {/* {Welcome message} */}
+        {/* {username} */}
+
+        {/* {change username component} */}
+        </div>
       </div>
     </div>
   )
