@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Login from '../components/Login'
 import { useMoralis } from 'react-moralis'
 import Header from '../components/Header'
-import Image from 'next/image'
+import Messages from '../components/Messages'
 
 const Home: NextPage = () => {
   // handles authentication
@@ -20,10 +20,8 @@ if (!isAuthenticated) return <Login />
     
       <div className="max-w-screen-2xl mx-auto">
       <Header />
-      {/* {Messages} */}
+      <Messages />
       </div>
-  
-      <button onClick={logout}>Logout</button>
     </div>
   )
 }
