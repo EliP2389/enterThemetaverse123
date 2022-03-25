@@ -18,7 +18,7 @@ const { user } = useMoralis();
             {/* {Each messgage} */}
         </div>
 
-        <div>
+        <div className="flex justify-center">
             <SendMessage />
         </div>
 
