@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import { ByMoralis, useMoralis } from "react-moralis"
 import SendMessage from "../components/SendMessage"
 
 
 function Messages() {
 const { user } = useMoralis();
+const endOfMessagesRef = useRef(null);
 
   return (
     <div className="pb-56">
@@ -19,10 +21,10 @@ const { user } = useMoralis();
         </div>
 
         <div className="flex justify-center">
-            <SendMessage />
+            <SendMessage endOfMessagesRef={endOfMessagesRef}/>
         </div>
 
-        <div className="text-center text-gray-200 mt-5"> 
+        <div ref={endOfMessagesRef} className="text-center text-gray-200 mt-5"> 
             <p>You're up to date {user.getUsername()}!🔥</p>
         </div>
     </div>
