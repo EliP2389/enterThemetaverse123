@@ -1,11 +1,26 @@
 import { useRef } from "react";
-import { ByMoralis, useMoralis } from "react-moralis"
+import { ByMoralis, useMoralis, useMoralisQuery } from "react-moralis"
 import SendMessage from "../components/SendMessage"
 
+// only show messages from the last hour
+const MINS_DURATION = 60;
 
 function Messages() {
 const { user } = useMoralis();
 const endOfMessagesRef = useRef(null);
+// targeting Messages field (case sensitive)
+const { dtaa, loading, error }= useMoralisQuery(
+    'Messages',
+    // querys messages at its createdAt date in an ascending order
+    (query) => 
+      query 
+      .ascending('createdAt')
+      .greaterThan(
+          'createdAt',
+        // method for keeping messages that have created less than an hour
+          new Date(Date.now() - 1000 * 60 * MINS_DURATION)
+      )
+);
 
   return (
     <div className="pb-56">
