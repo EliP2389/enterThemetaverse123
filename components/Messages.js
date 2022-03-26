@@ -9,7 +9,7 @@ function Messages() {
 const { user } = useMoralis();
 const endOfMessagesRef = useRef(null);
 // targeting Messages field (case sensitive)
-const { dtaa, loading, error }= useMoralisQuery(
+const { data, loading, error }= useMoralisQuery(
     'Messages',
     // querys messages at its createdAt date in an ascending order
     (query) => 
@@ -19,8 +19,14 @@ const { dtaa, loading, error }= useMoralisQuery(
           'createdAt',
         // method for keeping messages that have created less than an hour
           new Date(Date.now() - 1000 * 60 * MINS_DURATION)
-      )
+      ),
+      [],
+      {
+          live: true,
+      }
 );
+
+console.log(data);
 
   return (
     <div className="pb-56">
