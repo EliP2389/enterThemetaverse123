@@ -9,7 +9,7 @@ function SendMessage({endOfMessagesRef}) {
       e.preventDefault();
 
       if (!message) return;
-
+    // Moralis.Object.extend("Messages") creates a table in the database for our messages
       const Messages = Moralis.Object.extend('Messages')
       const messages = new Messages();
     //  save, saves messages in the table 
@@ -18,7 +18,7 @@ function SendMessage({endOfMessagesRef}) {
           username: user.getUsername(),
           ethAddress: user.get('ethAddress'),
       }).then((message) => {
-          message.json('message was successful')
+          
       },
       (error) => {
         //  the save failed because
@@ -47,7 +47,7 @@ function SendMessage({endOfMessagesRef}) {
       />
       <button 
       type="submit" 
-      onClick={setMessage}
+      onClick={sendMessage}
       className="font-bold text-rose-500">Send</button>
     </form>
   )
