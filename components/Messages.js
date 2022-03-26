@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ByMoralis, useMoralis, useMoralisQuery } from "react-moralis"
 import SendMessage from "../components/SendMessage"
+import Message from "../components/Message"
 
 // only show messages from the last hour
 const MINS_DURATION = 60;
@@ -22,11 +23,10 @@ const { data, loading, error }= useMoralisQuery(
       ),
       [],
       {
+        //   creates live update of messages
           live: true,
       }
 );
-
-console.log(data);
 
   return (
     <div className="pb-56">
@@ -38,7 +38,12 @@ console.log(data);
         </div>
 
         <div>
-            {/* {Each messgage} */}
+           {data.map((message) => (
+               <Message 
+               key={message.id} 
+               message={message} 
+               />
+           ))}
         </div>
 
         <div className="flex justify-center">
