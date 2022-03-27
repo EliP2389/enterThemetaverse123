@@ -6,7 +6,7 @@ const { user } = useMoralis();
 const isUserMessage = message.get('ethAddress') === user.get('ethAddress');
 
   return (
-    <div>
+    <div className={`flex items-end space-x-2 relative ${isUserMessage && 'justify-end'}`} >
         <div className={`flex space-x-4 p-3 rounded-lg 
         ${isUserMessage 
             ? "rounded-br-none bg-rose-300"
