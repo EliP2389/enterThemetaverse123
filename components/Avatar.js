@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useMoralis } from 'react-moralis'
 
-function Avatar(username, logoutOnPress) {
+function Avatar({ username, logoutOnPress }) {
   const { user, logout } = useMoralis()
 
   return (
@@ -10,8 +10,9 @@ function Avatar(username, logoutOnPress) {
       // lougoutOnPress if true then logout
       onClick={() => logoutOnPress && logout()}
       layout="fill"
-      src={`https://avatars.dicebear.com/api/adventurer/${
-        username || user.get('username')}.svg`}
+      src={`https://avatars.dicebear.com/api/bottts/${
+        username || user.get('username')
+      }.svg`}
     />
   )
 }

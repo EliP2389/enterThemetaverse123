@@ -1,35 +1,39 @@
-import Image from 'next/image';
-import { useMoralis } from "react-moralis";
+import Image from 'next/image'
+import { useMoralis } from 'react-moralis'
 
 function Login() {
-const { authenticate } = useMoralis();
+  const { authenticate } = useMoralis()
 
   return (
-    <div className="bg-black relative text-white">
-        <h1>I am the login screen</h1>
-        <div className="flex flex-col absolute z-50 h-4/6 w-full
-         items-center justify-center space-y-4"> 
-            {/* {Logo} */}
-            <Image 
-            className="object-cover rounded-full" 
-            src='https://wolf-wallpapers.pro/images/2048x1152-wolf-colorful-minimalism-2048x1152-resolution-hd-1-8-wolf-wallpapers.pro.jpg' 
-            height={200} width={200}
-            />
-            {/* {Login button} */}
-            <button 
-            onClick={authenticate}
-            className='bg-red-500 rounder-lg p-5 font-bold animate-pulse'>
-                Login to the METAVERSE
-                </button>
-        </div>
+    <div className="relative bg-black text-white">
+      <h1>I am the login screen</h1>
+      <div
+        className="absolute z-50 flex h-4/6 w-full flex-col
+         items-center justify-center space-y-4"
+      >
+        {/* {Logo} */}
+        <Image
+          className="rounded-full object-cover"
+          src="https://wolf-wallpapers.pro/images/2048x1152-wolf-colorful-minimalism-2048x1152-resolution-hd-1-8-wolf-wallpapers.pro.jpg"
+          height={200}
+          width={200}
+        />
+        {/* {Login button} */}
+        <button
+          onClick={authenticate}
+          className="rounder-lg animate-pulse rounded-full bg-rose-700 p-5 font-bold"
+        >
+          Login to the METAVERSE
+        </button>
+      </div>
 
-        <div className="w-full h-screen">
-            <Image 
-            src='https://web-app-wpp-uks-prod-wppcom-cd-1.azurewebsites.net/-/media/project/wpp/images/wpp-iq/2021/gaming-and-the-metaverse.jpg' 
-            layout='fill'
-            objectFit='cover'
-            />
-        </div>
+      <div className="h-screen w-full">
+        <Image
+          src="https://cdn.uhive.com/wp-content/uploads/2021/09/uhives-metavers-5th-section-5.webp"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
     </div>
   )
 }
